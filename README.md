@@ -16,7 +16,8 @@ go-multiplication-table,
 discordpy, 
 cppcli,
 tkinter,
-swing-template
+swing-template,
+discordia
 
 
 ```bash

@@ -26,6 +26,7 @@ const multiplicationtable = require('./template/multiplicationtable')
 const discordpy = require('./template/discordpy')
 const tkinter = require('./template/tkinter')
 const swingtemplate = require('./template/swingtemplate')
+const luadiscord = require('./template/discordlua')
 
 // Add template
 program
@@ -175,6 +176,32 @@ program
       console.log(clc.yellow('[YURD] Creating Project...'))
       console.log(clc.yellow('[YURD] Creating Files...'))
       fs.appendFile('main.java', swingtemplate.mainjava, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      if (options.code) {
+        exec('code .', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+      }
+      console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
+    }
+
+    if (template == 'discord.lua' || template == 'discordlua' || template == 'discordia') {
+      console.log(clc.yellow('[YURD] Install Template...'))
+      console.log(clc.yellow('[YURD] Creating Project...'))
+      console.log(clc.yellow('[YURD] Creating Files...'))
+      exec('lit install SinisterRectus/discordia', (err, stdout, stderr) => {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+          return;
+        }
+      });
+      fs.appendFile('main.lua', luadiscord.mainlua, function (err, data) {
         if (err) {
           console.log(clc.red('[YURD] Unexpected Error!'))
         }
@@ -594,7 +621,12 @@ discordpy | tkinter`),
 clc.white(`
 
 Java Support:
-swing-template`))
+swing-template`),
+
+clc.white(`
+
+Lua Support:
+discordia`))
   })
 
 program
