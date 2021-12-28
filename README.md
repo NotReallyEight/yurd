@@ -15,7 +15,8 @@ djs-handler,
 go-multiplication-table, 
 discordpy, 
 cppcli,
-tkinter
+tkinter,
+swing-template
 
 
 ```bash

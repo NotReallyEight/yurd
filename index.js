@@ -1,5 +1,10 @@
 #!/usr/bin/env node
 
+
+/*
+# Yurd app
+# 
+*/
 const clc = require("cli-color");
 const JSZip = require("jszip");
 const fs = require('fs');
@@ -584,7 +589,12 @@ go-multiplication-table`),
 clc.white(`
 
 Python Support:
-discordpy | tkinter`))
+discordpy | tkinter`),
+
+clc.white(`
+
+Java Support:
+swing-template`))
   })
 
 program
