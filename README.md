@@ -11,7 +11,8 @@ discord-bot-eris |
 simply-site |
 twitch-bot |
 website |
-djs-handler
+djs-handler |
+go-multiplication-table
 
 
 ```bash
