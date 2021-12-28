@@ -19,6 +19,7 @@ const djshnd = require('./template/djshandler')
 const cppcli = require('./template/cppcli')
 const multiplicationtable = require('./template/multiplicationtable')
 const discordpy = require('./template/discordpy')
+const tkinter = require('./template/tkinter')
 
 // Add template
 program
@@ -143,6 +144,25 @@ program
       console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
     }
 
+    if (template == 'tkinter') {
+      console.log(clc.yellow('[YURD] Install Template...'))
+      console.log(clc.yellow('[YURD] Creating Project...'))
+      console.log(clc.yellow('[YURD] Creating Files...'))
+      fs.appendFile('main.py', tkinter.mainpy, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      if (options.code) {
+        exec('code .', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+      }
+      console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
+    }
 
     if (template == 'discord-bot') {
       console.log(clc.yellow('[YURD] Install Template...'))
@@ -543,7 +563,7 @@ go-multiplication-table`),
 clc.white(`
 
 Python Support:
-discordpy`))
+discordpy | tkinter`))
   })
 
 program
