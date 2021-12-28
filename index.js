@@ -26,6 +26,8 @@ const tkinter = require('./template/tkinter')
 const swingtemplate = require('./template/swingtemplate')
 const luadiscord = require('./template/discordlua')
 const go = require('./template/go')
+const webgl = require('./template/webgl')
+
 
 // Add template
 program
@@ -590,6 +592,27 @@ program
       })
       console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
     }
+
+    if (template == 'webgl'  || template == 'web-gl') {
+      console.log(clc.yellow('[YURD] Install Template...'))
+      console.log(clc.yellow('[YURD] Creating Files...'))
+      fs.appendFile('index.html', webgl.indexhtml, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      fs.appendFile('webgl.css', webgl.webglcss, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      fs.appendFile('webgl-demo.js', webgl.webgldemojs, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
+    }
   })
 
 
@@ -608,7 +631,7 @@ program
     console.log(
       clc.white(`
 JavaScript Support: 
-discord-bot | discord-bot-eris | simply-site | twitch-bot | website | djs-handler`),
+discord-bot | discord-bot-eris | simply-site | twitch-bot | website | djs-handler | webgl`),
       clc.white(`
 
 TypeScript Support:
