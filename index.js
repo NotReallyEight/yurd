@@ -6,7 +6,7 @@ const fs = require('fs');
 const { exec } = require('child_process');
 const { Command } = require('commander');
 const program = new Command();
-const { prompt } = require('inquirer');
+const inquirer = require('inquirer');
 
 
 // Import Template Files
@@ -78,42 +78,42 @@ program
 
       if (options.typescript) {
         console.log(clc.yellow('[YURD] Creating Project...'))
-      exec('npm init -y', (err, stdout, stderr) => {
-        if (err) {
-          console.log(clc.red('[YURD] Unexpected Error!'))
-          return;
-        }
-      });
-      console.log(clc.yellow('[YURD] Installing Package...'))
-      exec('npm install discord.js dotenv', (err, stdout, stderr) => {
-        if (err) {
-          console.log(clc.red('[YURD] Unexpected Error!'))
-          return;
-        }
-      });
-
-      console.log(clc.yellow('[YURD] Creating Files...'))
-      fs.appendFile('index.ts', discordbot.indexts, function (err, data) {
-        if (err) {
-          console.log(clc.red('[YURD] Unexpected Error!'))
-        }
-      })
-      fs.appendFile('.env', discordbot.env, function (err, data) {
-        if (err) {
-          console.log(clc.red('[YURD] Unexpected Error!'))
-        }
-      })
-      if (options.code) {
-        exec('code .', (err, stdout, stderr) => {
+        exec('npm init -y', (err, stdout, stderr) => {
           if (err) {
             console.log(clc.red('[YURD] Unexpected Error!'))
             return;
           }
         });
+        console.log(clc.yellow('[YURD] Installing Package...'))
+        exec('npm install discord.js dotenv', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+
+        console.log(clc.yellow('[YURD] Creating Files...'))
+        fs.appendFile('index.ts', discordbot.indexts, function (err, data) {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+          }
+        })
+        fs.appendFile('.env', discordbot.env, function (err, data) {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+          }
+        })
+        if (options.code) {
+          exec('code .', (err, stdout, stderr) => {
+            if (err) {
+              console.log(clc.red('[YURD] Unexpected Error!'))
+              return;
+            }
+          });
+        }
+        console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
+        return
       }
-      console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
-      return
-    }
 
 
       console.log(clc.yellow('[YURD] Creating Project...'))
@@ -159,46 +159,46 @@ program
 
       if (options.typescript) {
         console.log(clc.yellow('[YURD] Creating Project...'))
-      exec('npm init -y', (err, stdout, stderr) => {
-        if (err) {
-          console.log(clc.red('[YURD] Unexpected Error!'))
-          return;
-        }
-      });
-      console.log(clc.yellow('[YURD] Installing Package...'))
-      exec('npm install discord.js dotenv', (err, stdout, stderr) => {
-        if (err) {
-          console.log(clc.red('[YURD] Unexpected Error!'))
-          return;
-        }
-      });
-      console.log(clc.yellow('[YURD] Creating Files...'))
-      fs.appendFile('index.ts', djshnd.indexts, function (err, data) {
-        if (err) {
-          console.log(clc.red('[YURD] Unexpected Error!'))
-        }
-      })
-      fs.mkdir('commands', function (err, data) {
-        if (err) {
-          console.log(clc.red('[YURD] Unexpected Error!'))
-        }
-      })
-      fs.appendFile('.env', djshnd.env, function (err, data) {
-        if (err) {
-          console.log(clc.red('[YURD] Unexpected Error!'))
-        }
-      })
-      if (options.code) {
-        exec('code .', (err, stdout, stderr) => {
+        exec('npm init -y', (err, stdout, stderr) => {
           if (err) {
             console.log(clc.red('[YURD] Unexpected Error!'))
             return;
           }
         });
+        console.log(clc.yellow('[YURD] Installing Package...'))
+        exec('npm install discord.js dotenv', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+        console.log(clc.yellow('[YURD] Creating Files...'))
+        fs.appendFile('index.ts', djshnd.indexts, function (err, data) {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+          }
+        })
+        fs.mkdir('commands', function (err, data) {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+          }
+        })
+        fs.appendFile('.env', djshnd.env, function (err, data) {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+          }
+        })
+        if (options.code) {
+          exec('code .', (err, stdout, stderr) => {
+            if (err) {
+              console.log(clc.red('[YURD] Unexpected Error!'))
+              return;
+            }
+          });
+        }
+        console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
+        return
       }
-      console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
-      return
-    }
 
 
       console.log(clc.yellow('[YURD] Creating Project...'))
@@ -251,42 +251,42 @@ program
 
       if (options.typescript) {
         console.log(clc.yellow('[YURD] Creating Project...'))
-      exec('npm init -y', (err, stdout, stderr) => {
-        if (err) {
-          console.log(clc.red('[YURD] Unexpected Error!'))
-          return;
-        }
-      });
-      console.log(clc.yellow('[YURD] Installing Package...'))
-      exec('npm install eris dotenv', (err, stdout, stderr) => {
-        if (err) {
-          console.log(clc.red('[YURD] Unexpected Error!'))
-          return;
-        }
-      });
-
-      console.log(clc.yellow('[YURD] Creating Files...'))
-      fs.appendFile('index.ts', eris.indexts, function (err, data) {
-        if (err) {
-          console.log(clc.red('[YURD] Unexpected Error!'))
-        }
-      })
-      fs.appendFile('.env', eris.env, function (err, data) {
-        if (err) {
-          console.log(clc.red('[YURD] Unexpected Error!'))
-        }
-      })
-      if (options.code) {
-        exec('code .', (err, stdout, stderr) => {
+        exec('npm init -y', (err, stdout, stderr) => {
           if (err) {
             console.log(clc.red('[YURD] Unexpected Error!'))
             return;
           }
         });
+        console.log(clc.yellow('[YURD] Installing Package...'))
+        exec('npm install eris dotenv', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+
+        console.log(clc.yellow('[YURD] Creating Files...'))
+        fs.appendFile('index.ts', eris.indexts, function (err, data) {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+          }
+        })
+        fs.appendFile('.env', eris.env, function (err, data) {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+          }
+        })
+        if (options.code) {
+          exec('code .', (err, stdout, stderr) => {
+            if (err) {
+              console.log(clc.red('[YURD] Unexpected Error!'))
+              return;
+            }
+          });
+        }
+        console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
+        return
       }
-      console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
-      return
-    }
 
 
       console.log(clc.yellow('[YURD] Creating Project...'))
@@ -331,42 +331,42 @@ program
 
       if (options.typescript) {
         console.log(clc.yellow('[YURD] Creating Project...'))
-      exec('npm init -y', (err, stdout, stderr) => {
-        if (err) {
-          console.log(clc.red('[YURD] Unexpected Error!'))
-          return;
-        }
-      });
-      console.log(clc.yellow('[YURD] Installing Package...'))
-      exec('npm install tmi.js dotenv', (err, stdout, stderr) => {
-        if (err) {
-          console.log(clc.red('[YURD] Unexpected Error!'))
-          return;
-        }
-      });
-
-      console.log(clc.yellow('[YURD] Creating Files...'))
-      fs.appendFile('index.ts', twitchbot.indexts, function (err, data) {
-        if (err) {
-          console.log(clc.red('[YURD] Unexpected Error!'))
-        }
-      })
-      fs.appendFile('.env', twitchbot.env, function (err, data) {
-        if (err) {
-          console.log(clc.red('[YURD] Unexpected Error!'))
-        }
-      })
-      if (options.code) {
-        exec('code .', (err, stdout, stderr) => {
+        exec('npm init -y', (err, stdout, stderr) => {
           if (err) {
             console.log(clc.red('[YURD] Unexpected Error!'))
             return;
           }
         });
+        console.log(clc.yellow('[YURD] Installing Package...'))
+        exec('npm install tmi.js dotenv', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+
+        console.log(clc.yellow('[YURD] Creating Files...'))
+        fs.appendFile('index.ts', twitchbot.indexts, function (err, data) {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+          }
+        })
+        fs.appendFile('.env', twitchbot.env, function (err, data) {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+          }
+        })
+        if (options.code) {
+          exec('code .', (err, stdout, stderr) => {
+            if (err) {
+              console.log(clc.red('[YURD] Unexpected Error!'))
+              return;
+            }
+          });
+        }
+        console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
+        return
       }
-      console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
-      return
-    }
 
 
       console.log(clc.yellow('[YURD] Creating Project...'))
@@ -445,6 +445,52 @@ program
   .action(() => {
     console.log('1.0.0')
   })
+
+program
+  .command('all')
+  .description('YURD all template')
+  .action(() => {
+    console.log(
+      clc.yellow(`
+JavaScript Support: 
+discord-bot | discord-bot-eris | simply-site | twitch-bot | website | djs-handler`),
+      clc.cyan(`
+
+TypeScript Support:
+discord-bot | discord-bot-eris | twitch-bot | djs-handler`))
+  })
+
+program
+  .command('help')
+  .description('YURD Help')
+  .action(() => {
+    console.log(clc.white(`
+yurd help : Show help menu
+yurd version : Show version
+yurd create <template> : Create template
+yurd all : Show all template`))
+})
+
+program
+  .command('developer')
+  .description('YURD Developer')
+  .action(() => {
+    console.log(clc.white(`
+Thebigbot - Main developer & CEO - https://github.com/Thebigbot0000
+ale_006 - Template developer - https://github.com/ale-006`))
+})
+
+program
+  .command('dev')
+  .description('YURD Developer')
+  .action(() => {
+    console.log(clc.white(`
+Thebigbot - Main developer & CEO - https://github.com/Thebigbot0000
+ale_006 - Template developer - https://github.com/ale-006`))
+})
+
+
+
 
 program.parse();
 
