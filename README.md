@@ -17,7 +17,8 @@ discordpy,
 cppcli,
 tkinter,
 swing-template,
-discordia
+discordia,
+go
 
 
 ```bash

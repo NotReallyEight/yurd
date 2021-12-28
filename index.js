@@ -27,6 +27,7 @@ const discordpy = require('./template/discordpy')
 const tkinter = require('./template/tkinter')
 const swingtemplate = require('./template/swingtemplate')
 const luadiscord = require('./template/discordlua')
+const go = require('./template/go')
 
 // Add template
 program
@@ -580,6 +581,17 @@ program
       }
       console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
     }
+
+    if (template == 'go') {
+      console.log(clc.yellow('[YURD] Install Template...'))
+      console.log(clc.yellow('[YURD] Creating Files...'))
+      fs.appendFile('main.go', go.maingo, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
+    }
   })
 
 
@@ -611,7 +623,7 @@ cpp-cli`),
 clc.white(`
 
 Go Support:
-go-multiplication-table`),
+go-multiplication-table | go`),
 
 clc.white(`
 
