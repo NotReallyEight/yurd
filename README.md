@@ -6,13 +6,15 @@ npm i -g yurd
 
 ### All templates
 
-discord-bot |
-discord-bot-eris |
-simply-site |
-twitch-bot |
-website |
-djs-handler |
-go-multiplication-table
+discord-bot, 
+discord-bot-eris, 
+simply-site, 
+twitch-bot, 
+website, 
+djs-handler, 
+go-multiplication-table, 
+discordpy, 
+cppcli
 
 
 ```bash

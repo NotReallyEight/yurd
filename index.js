@@ -18,6 +18,7 @@ const eris = require('./template/eris')
 const djshnd = require('./template/djshandler')
 const cppcli = require('./template/cppcli')
 const multiplicationtable = require('./template/multiplicationtable')
+const discordpy = require('./template/discordpy')
 
 // Add template
 program
@@ -101,6 +102,32 @@ program
         }
       })
       fs.appendFile('info.h', cppcli.infoh, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      if (options.code) {
+        exec('code .', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+      }
+      console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
+    }
+
+    if (template == 'discord.py' || template == 'discordpy') {
+      console.log(clc.yellow('[YURD] Install Template...'))
+      console.log(clc.yellow('[YURD] Creating Project...'))
+      exec('py -3 -m pip install -U discord.py', (err, stdout, stderr) => {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+          return;
+        }
+      });
+      console.log(clc.yellow('[YURD] Creating Files...'))
+      fs.appendFile('main.py', discordpy.mainpy, function (err, data) {
         if (err) {
           console.log(clc.red('[YURD] Unexpected Error!'))
         }
@@ -496,13 +523,27 @@ program
   .description('YURD all template')
   .action(() => {
     console.log(
-      clc.yellow(`
+      clc.white(`
 JavaScript Support: 
 discord-bot | discord-bot-eris | simply-site | twitch-bot | website | djs-handler`),
-      clc.cyan(`
+      clc.white(`
 
 TypeScript Support:
-discord-bot | discord-bot-eris | twitch-bot | djs-handler`))
+discord-bot | discord-bot-eris | twitch-bot | djs-handler`),
+clc.white(`
+
+C++ Support:
+cpp-cli`),
+
+clc.white(`
+
+Go Support:
+go-multiplication-table`),
+
+clc.white(`
+
+Python Support:
+discordpy`))
   })
 
 program
