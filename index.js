@@ -15,6 +15,7 @@ const discordbot = require('./template/discordbot')
 const twitchbot = require('./template/twitchbot')
 const simplysite = require('./template/simplysite')
 const eris = require('./template/eris')
+const djshnd = require('./template/djshandler')
 
 // Add template
 program
@@ -151,6 +152,98 @@ program
       }
       console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
     }
+
+    if (template == 'djs-handler') {
+      console.log(clc.yellow('[YURD] Install Template...'))
+
+
+      if (options.typescript) {
+        console.log(clc.yellow('[YURD] Creating Project...'))
+      exec('npm init -y', (err, stdout, stderr) => {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+          return;
+        }
+      });
+      console.log(clc.yellow('[YURD] Installing Package...'))
+      exec('npm install discord.js dotenv', (err, stdout, stderr) => {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+          return;
+        }
+      });
+      console.log(clc.yellow('[YURD] Creating Files...'))
+      fs.appendFile('index.ts', djshnd.indexts, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      fs.mkdir('commands', function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      fs.appendFile('.env', djshnd.env, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      if (options.code) {
+        exec('code .', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+      }
+      console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
+      return
+    }
+
+
+      console.log(clc.yellow('[YURD] Creating Project...'))
+      exec('npm init -y', (err, stdout, stderr) => {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+          return;
+        }
+      });
+      console.log(clc.yellow('[YURD] Installing Package...'))
+
+      exec('npm install discord.js dotenv', (err, stdout, stderr) => {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+          return;
+        }
+      });
+
+      console.log(clc.yellow('[YURD] Creating Files...'))
+      fs.appendFile('index.js', djshnd.indexjs, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      fs.mkdirSync('commands', function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      fs.appendFile('.env', djshnd.env, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      if (options.code) {
+        exec('code .', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+      }
+      console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
+    }
+
 
     if (template == 'discord-bot-eris') {
       console.log(clc.yellow('[YURD] Install Template...'))
