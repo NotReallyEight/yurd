@@ -29,7 +29,11 @@ Open VSC
 yurd create <template> -vsc 
 ```
 
-### Developer
+### General commands  
 
-Thebigbot - Main developer & CEO - https://github.com/Thebigbot0000
-ale_006 - Template developer - https://github.com/ale-006
+```bash
+yurd help
+yurd developer
+yurd version
+yurd all
+```

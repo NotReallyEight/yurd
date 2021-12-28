@@ -468,7 +468,8 @@ program
 yurd help : Show help menu
 yurd version : Show version
 yurd create <template> : Create template
-yurd all : Show all template`))
+yurd all : Show all template
+yurd developer : Show all developer`))
 })
 
 program
