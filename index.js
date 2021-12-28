@@ -3,10 +3,8 @@
 
 /*
 # Yurd app
-# 
 */
 const clc = require("cli-color");
-const JSZip = require("jszip");
 const fs = require('fs');
 const { exec } = require('child_process');
 const { Command } = require('commander');
