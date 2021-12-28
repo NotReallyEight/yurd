@@ -20,6 +20,7 @@ const cppcli = require('./template/cppcli')
 const multiplicationtable = require('./template/multiplicationtable')
 const discordpy = require('./template/discordpy')
 const tkinter = require('./template/tkinter')
+const swingtemplate = require('./template/swingtemplate')
 
 // Add template
 program
@@ -149,6 +150,26 @@ program
       console.log(clc.yellow('[YURD] Creating Project...'))
       console.log(clc.yellow('[YURD] Creating Files...'))
       fs.appendFile('main.py', tkinter.mainpy, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      if (options.code) {
+        exec('code .', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+      }
+      console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
+    }
+
+    if (template == 'swing-template' || template == 'swinswingtemplateg') {
+      console.log(clc.yellow('[YURD] Install Template...'))
+      console.log(clc.yellow('[YURD] Creating Project...'))
+      console.log(clc.yellow('[YURD] Creating Files...'))
+      fs.appendFile('main.java', swingtemplate.mainjava, function (err, data) {
         if (err) {
           console.log(clc.red('[YURD] Unexpected Error!'))
         }
