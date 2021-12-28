@@ -16,6 +16,7 @@ const twitchbot = require('./template/twitchbot')
 const simplysite = require('./template/simplysite')
 const eris = require('./template/eris')
 const djshnd = require('./template/djshandler')
+const cppcli = require('./template/cppcli')
 const multiplicationtable = require('./template/multiplicationtable')
 
 // Add template
@@ -75,6 +76,31 @@ program
       console.log(clc.yellow('[YURD] Creating Project...'))
       console.log(clc.yellow('[YURD] Creating Files...'))
       fs.appendFile('main.go', multiplicationtable.maingo, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      if (options.code) {
+        exec('code .', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+      }
+      console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
+    }
+
+    if (template == 'cpp-cli' || template == 'c++-cli') {
+      console.log(clc.yellow('[YURD] Install Template...'))
+      console.log(clc.yellow('[YURD] Creating Project...'))
+      console.log(clc.yellow('[YURD] Creating Files...'))
+      fs.appendFile('main.cpp', cppcli.maincpp, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      fs.appendFile('info.h', cppcli.infoh, function (err, data) {
         if (err) {
           console.log(clc.red('[YURD] Unexpected Error!'))
         }
