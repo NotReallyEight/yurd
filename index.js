@@ -29,6 +29,7 @@ const swingtemplate = require('./template/swingtemplate')
 const luadiscord = require('./template/discordlua')
 const go = require('./template/go')
 const webgl = require('./template/webgl')
+const discordext = require('./template/discordext')
 
 
 // Add template
@@ -162,6 +163,26 @@ program
       console.log(clc.yellow('[YURD] Creating Project...'))
       console.log(clc.yellow('[YURD] Creating Files...'))
       fs.appendFile('main.py', tkinter.mainpy, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      if (options.code) {
+        exec('code .', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+      }
+      console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
+    }
+
+    if (template == 'discordext' || template == 'discord.ext') {
+      console.log(clc.yellow('[YURD] Install Template...'))
+      console.log(clc.yellow('[YURD] Creating Project...'))
+      console.log(clc.yellow('[YURD] Creating Files...'))
+      fs.appendFile('main.py', discordext.apppy, function (err, data) {
         if (err) {
           console.log(clc.red('[YURD] Unexpected Error!'))
         }
@@ -598,7 +619,7 @@ program
       console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
     }
 
-    if (template == 'webgl'  || template == 'web-gl') {
+    if (template == 'webgl' || template == 'web-gl') {
       console.log(clc.yellow('[YURD] Install Template...'))
       console.log(clc.yellow('[YURD] Creating Files...'))
       fs.appendFile('index.html', webgl.indexhtml, function (err, data) {
@@ -641,27 +662,27 @@ discord-bot | discord-bot-eris | simply-site | twitch-bot | website | djs-handle
 
 TypeScript Support:
 discord-bot | discord-bot-eris | twitch-bot | djs-handler`),
-clc.white(`
+      clc.white(`
 
 C++ Support:
 cpp-cli`),
 
-clc.white(`
+      clc.white(`
 
 Go Support:
 go-multiplication-table | go`),
 
-clc.white(`
+      clc.white(`
 
 Python Support:
-discordpy | tkinter`),
+discordpy | tkinter | discordext`),
 
-clc.white(`
+      clc.white(`
 
 Java Support:
 swing-template`),
 
-clc.white(`
+      clc.white(`
 
 Lua Support:
 discordia`))
@@ -677,7 +698,7 @@ yurd version : Show version
 yurd create <template> : Create template
 yurd all : Show all template
 yurd developer : Show all developer`))
-})
+  })
 
 program
   .command('developer')
@@ -689,7 +710,7 @@ ale_006 - Template developer - https://github.com/ale-006
 NotReallyEight - Template developer - https://github.com/NotReallyEight
 UsboKirishima - Template developer - https://github.com/UsboKirishima
 Bl4ckdestinyXX - Template developer - https://github.com/BlackdestinyXX`))
-})
+  })
 
 program
   .command('dev')
@@ -701,7 +722,7 @@ ale_006 - Template developer - https://github.com/ale-006
 NotReallyEight - Template developer - https://github.com/NotReallyEight
 UsboKirishima - Template developer - https://github.com/UsboKirishima
 Bl4ckdestinyXX - Template developer - https://github.com/BlackdestinyXX`))
-})
+  })
 
 
 

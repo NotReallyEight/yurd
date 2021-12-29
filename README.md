@@ -20,7 +20,8 @@ cppcli,
 tkinter,
 swing-template,
 discordia,
-go
+go,
+discordext
 
 
 ```bash
