@@ -682,7 +682,8 @@ program
 Thebigbot - Main developer & CEO - https://github.com/Thebigbot0000
 ale_006 - Template developer - https://github.com/ale-006
 NotReallyEight - Template developer - https://github.com/NotReallyEight
-UsboKirishima - Template developer - https://github.com/UsboKirishima`))
+UsboKirishima - Template developer - https://github.com/UsboKirishima
+Bl4ckdestinyXX - Template developer - https://github.com/BlackdestinyXX`))
 })
 
 program
@@ -693,7 +694,8 @@ program
 Thebigbot - Main developer & CEO - https://github.com/Thebigbot0000
 ale_006 - Template developer - https://github.com/ale-006
 NotReallyEight - Template developer - https://github.com/NotReallyEight
-UsboKirishima - Template developer - https://github.com/UsboKirishima`))
+UsboKirishima - Template developer - https://github.com/UsboKirishima
+Bl4ckdestinyXX - Template developer - https://github.com/BlackdestinyXX`))
 })
 
 
