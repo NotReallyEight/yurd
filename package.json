@@ -1,6 +1,6 @@
 {
   "name": "yurd",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Project Manager",
   "main": "./index.js",
   "bin": {

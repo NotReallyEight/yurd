@@ -11,6 +11,8 @@ const { Command } = require('commander');
 const program = new Command();
 const inquirer = require('inquirer');
 
+// Import package.json
+const pkJson = require('./package.json')
 
 // Import Template Files
 const website = require('./template/website')
@@ -37,6 +39,9 @@ program
   .description('Install Template')
   .action((template, options) => {
 
+    if (!template) {
+      console.log(clc.red(`404 Error. Not Fund! -- Yurd ${pkJson.version}`))
+    }
     if (template == 'website') {
       console.log(clc.yellow('[YURD] Install Template...'))
       console.log(clc.yellow('[YURD] Creating Project...'))
@@ -621,7 +626,7 @@ program
   .command('version')
   .description('YURD Version')
   .action(() => {
-    console.log('1.0.0')
+    console.log(pkJson.version)
   })
 
 program
