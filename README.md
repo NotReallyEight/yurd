@@ -1,4 +1,6 @@
 # Template Generator
+Whenever you have to create a project in any language, you often waste time creating the code base. Yurd has some code base templates to install to get started and programming right away without wasting time creating the code base
+(installs with npm but also uses other languages) 
 
 ```bash
 npm i -g yurd
