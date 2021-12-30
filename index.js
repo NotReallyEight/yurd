@@ -857,6 +857,7 @@ yurd help : Show help menu
 yurd version : Show version
 yurd create <template> : Create template
 yurd all : Show all template
+yurd info <template> : Show template info
 yurd developer : Show all developer`))
   })
 
