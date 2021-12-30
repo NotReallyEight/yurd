@@ -1,19 +1,13 @@
 const apppy = `import discord
 from discord.ext import commands
 
-client = commands.Bot(command_prefix = '!')
+bot = commands.Bot(command_prefix='>')
 
-@client.event
-async def on_ready():
-    print('Ready!')
+@bot.command()
+async def ping(ctx):
+    await ctx.send('pong')
 
-# Command Example
-# @client.command
-#async def ping(ctx):
-#    await ctx.send('pong!')
-
-client.add_command()
-client.run('token')`
+bot.run('token')`
 
 
 module.exports = {
