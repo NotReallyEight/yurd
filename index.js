@@ -3,6 +3,7 @@
 
 /*
 # Yurd app
+# Template Generator
 */
 const clc = require("cli-color");
 const fs = require('fs');
@@ -30,6 +31,7 @@ const luadiscord = require('./template/discordlua')
 const go = require('./template/go')
 const webgl = require('./template/webgl')
 const discordext = require('./template/discordext')
+const rustcli = require('./template/rustcli')
 
 
 // Add template
@@ -92,6 +94,26 @@ program
       console.log(clc.yellow('[YURD] Creating Project...'))
       console.log(clc.yellow('[YURD] Creating Files...'))
       fs.appendFile('main.go', multiplicationtable.maingo, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      if (options.code) {
+        exec('code .', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+      }
+      console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
+    }
+
+    if (template == 'rust-cli' || template == 'rustcli') {
+      console.log(clc.yellow('[YURD] Install Template...'))
+      console.log(clc.yellow('[YURD] Creating Project...'))
+      console.log(clc.yellow('[YURD] Creating Files...'))
+      fs.appendFile('main.rs', rustcli.mainrs, function (err, data) {
         if (err) {
           console.log(clc.red('[YURD] Unexpected Error!'))
         }
@@ -181,6 +203,12 @@ program
     if (template == 'discordext' || template == 'discord.ext') {
       console.log(clc.yellow('[YURD] Install Template...'))
       console.log(clc.yellow('[YURD] Creating Project...'))
+      exec('py -3 -m pip install -U discord.py', (err, stdout, stderr) => {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+          return;
+        }
+      });
       console.log(clc.yellow('[YURD] Creating Files...'))
       fs.appendFile('main.py', discordext.apppy, function (err, data) {
         if (err) {
