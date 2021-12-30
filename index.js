@@ -730,7 +730,7 @@ program
       console.log(`
 》File: index.js, package-lock.json, package.json
 》Directory: node_modules
-》Language: js
+》Language: Js
 》Packages: discord.js, dotenv
 》Requires: Node.js, npm`)
     }
@@ -739,18 +739,111 @@ program
       console.log(`
 》File: index.js, package-lock.json, package.json
 》Directory: node_modules
-》Language: js
+》Language: Js
 》Packages: eris, dotenv
+》Requires: Node.js, npm`)
+    }
+
+    if (template === 'website') {
+      console.log(`
+》File: index.js, package-lock.json, package.json, index.html, index.css
+》Directory: node_modules
+》Language: html, css, js
+》Packages: express, fs, http
 》Requires: Node.js, npm`)
     }
 
     if (template === 'simply-site') {
       console.log(`
-》File: index.js, package-lock.json, package.json, index.html, index.css
+》File: index.html, style.css, script.js
+》Language: Html, Css, Js`)
+    }
+
+    if (template === 'twitch-bot') {
+      console.log(`
+》File: index.js, package-lock.json, package.json
 》Directory: node_modules
-》Language: js
-》Packages: express, fs, 
+》Language: Js
+》Packages: tmi.js, dotenv
 》Requires: Node.js, npm`)
+    }
+
+    if (template === 'djs-handler') {
+      console.log(`
+》File: index.js, package-lock.json, package.json
+》Directory: node_modules, commands
+》Language: Js
+》Packages: discord.js, dotenv, fs
+》Requires: Node.js, npm`)
+    }
+
+    if (template === 'go-multiplication-table') {
+      console.log(`
+》File: main.go
+》Language: Go
+》Packages: fmt
+》Requires: Go`)
+    }
+
+    if (template === 'discordpy') {
+      console.log(`
+》File: main.py
+》Language: Python
+》Packages: discord.py
+》Requires: Python, pip`)
+    }
+
+    if (template === 'cppcli') {
+      console.log(`
+》File: info.h, main.cpp
+》Language: C++`)
+    }
+
+    if (template === 'tkinter') {
+      console.log(`
+》File: main.py
+》Language: Python
+》Packages: tkinter
+》Requires: Python, pip`)
+    }
+
+    if (template === 'swing-template') {
+      console.log(`
+》File: main.java
+》Language: Java
+》Packages: JavaSwing
+》Requires: Java`)
+    }
+
+    if (template === 'discordia') {
+      console.log(`
+》File: main.lua
+》Language: Lua
+》Packages: SinisterRectus/discordia
+》Requires: Luvit`)
+    }
+
+    if (template === 'go') {
+      console.log(`
+》File: main.go
+》Language: Go
+》Packages: fmt
+》Requires: Go`)
+    }
+
+    if (template === 'discordext') {
+      console.log(`
+》File: main.py
+》Language: Python
+》Packages: discord.py
+》Requires: Python, pip`)
+    }
+
+    if (template === 'rust-cli') {
+      console.log(`
+》File: main.rs
+》Language: Rust
+》Requires: Rust`)
     }
   })
 

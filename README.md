@@ -40,6 +40,12 @@ Open VSC
 yurd create <template> -vsc 
 ```
 
+### Info command
+
+```bash
+yurd info <template>
+```
+
 ### General commands  
 
 ```bash
