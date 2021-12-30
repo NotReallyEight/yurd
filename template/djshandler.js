@@ -1,6 +1,7 @@
 const indexjs = `const Discord = require('discord.js')
 const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES] });
 const env = require('dotenv').config()
+const fs = require('fs')
 
 client.on('ready', () => {
     console.log(\`\${client.user.username}#\${client.user.discriminator} Online!\`)
@@ -36,6 +37,7 @@ client.login(process.env.TOKEN)`
 const indexts = `import Discord from 'discord.js';
 const client = new Discord.Client({intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES]})
 import dotenv from "dotenv";
+import fs from "fs";
 
 client.on('ready', () => {
     console.log(\`\${client.user.username}#\${client.user.discriminator} Online!\`)

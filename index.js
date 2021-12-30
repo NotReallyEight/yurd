@@ -366,7 +366,7 @@ program
           }
         });
         console.log(clc.yellow('[YURD] Installing Package...'))
-        exec('npm install discord.js dotenv', (err, stdout, stderr) => {
+        exec('npm install discord.js dotenv fs @types/node', (err, stdout, stderr) => {
           if (err) {
             console.log(clc.red('[YURD] Unexpected Error!'))
             return;
@@ -410,7 +410,7 @@ program
       });
       console.log(clc.yellow('[YURD] Installing Package...'))
 
-      exec('npm install discord.js dotenv', (err, stdout, stderr) => {
+      exec('npm install discord.js dotenv fs', (err, stdout, stderr) => {
         if (err) {
           console.log(clc.red('[YURD] Unexpected Error!'))
           return;
@@ -715,11 +715,45 @@ swing-template`),
 Lua Support:
 discordia`),
 
-clc.white(`
+      clc.white(`
 
 Rust Support:
 rust-cli`))
   })
+
+
+program
+  .command('info [template]')
+  .description('YURD Help')
+  .action((template) => {
+    if (template === 'discord-bot') {
+      console.log(`
+》File: index.js, package-lock.json, package.json
+》Directory: node_modules
+》Language: js
+》Packages: discord.js, dotenv
+》Requires: Node.js, npm`)
+    }
+
+    if (template === 'discord-bot-eris') {
+      console.log(`
+》File: index.js, package-lock.json, package.json
+》Directory: node_modules
+》Language: js
+》Packages: eris, dotenv
+》Requires: Node.js, npm`)
+    }
+
+    if (template === 'simply-site') {
+      console.log(`
+》File: index.js, package-lock.json, package.json, index.html, index.css
+》Directory: node_modules
+》Language: js
+》Packages: express, fs, 
+》Requires: Node.js, npm`)
+    }
+  })
+
 
 program
   .command('help')
