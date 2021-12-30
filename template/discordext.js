@@ -8,7 +8,7 @@ async def on_ready():
     print('Ready!')
 
 # Command Example
-# @client.command()
+# @client.command
 #async def ping(ctx):
 #    await ctx.send('pong!')
 
