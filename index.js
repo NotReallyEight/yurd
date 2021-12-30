@@ -713,7 +713,12 @@ swing-template`),
       clc.white(`
 
 Lua Support:
-discordia`))
+discordia`),
+
+clc.white(`
+
+Rust Support:
+rust-cli`))
   })
 
 program

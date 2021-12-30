@@ -21,7 +21,8 @@ tkinter,
 swing-template,
 discordia,
 go,
-discordext
+discordext,
+rust-cli
 
 
 ```bash
