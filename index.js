@@ -4,7 +4,96 @@
 /*
 # Yurd app
 # Template Generator
+# 
+# 
+# README
+# Whenever you have to create a project in any language, you often waste time creating the code base. 
+# Yurd has some code base templates to install to get started and programming right away without wasting time creating the code base 
+# (installs with npm but also uses other languages)
+# 
+# npm i -g yurd
+# 
+# All templates
+# 
+# discord-bot, discord-bot-eris, simply-site, twitch-bot, website, djs-handler, go-multiplication-table, discordpy, cppcli, tkinter, swing-template, discordia, go, discordext, rust-cli
+# 
+# yurd create <template>
+# 
+# Use TypeScript in discord-bot | discord-bot-eris | twitch-bot | djs-handler
+# 
+# yurd create <template> -ts 
+# 
+# Open VSC
+# 
+# yurd create <template> -vsc 
+# 
+# Info command
+# 
+# yurd info <template>
+# 
+# General commands
+# 
+# yurd help
+# yurd developer
+# yurd version
+# yurd all
+# 
+# ----------------------------------------------------------------
+# 
+# Yurd by
+# Thebigbot - Main developer & CEO - https://github.com/Thebigbot0000
+# ale_006 - Template developer - https://github.com/ale-006
+# NotReallyEight - Template developer - https://github.com/NotReallyEight
+# UsboKirishima - Template developer - https://github.com/UsboKirishima
+# Bl4ckdestinyXX - Template developer - https://github.com/BlackdestinyXX
+# 
+# ----------------------------------------------------------------
+# 
+# All Commands
+# yurd help
+# yurd developer
+# yurd version
+# yurd all
+# yurd info <template>
+# yurd create <template>
+# 
+# 
+# yurd help : Show help menu
+# yurd version : Show version
+# yurd create <template> : Create template
+# yurd all : Show all template
+# yurd info <template> : Show template info
+# yurd developer : Show all developer
+# 
+# 
+# 
+# ----------------------------------------------------------------
+# 
+# 
+# 
+# Links
+# https://github.com/Thebigbot0000/yurd
+# https://github.com/Thebigbot0000/yurd.js.org
+# https://www.npmjs.com/package/yurd
+# 
+# 
+# 
+# § Dev §
+# https://github.com/Thebigbot0000
+# https://github.com/ale-006
+# https://github.com/NotReallyEight
+# https://github.com/UsboKirishima
+# https://github.com/BlackdestinyXX
+# https://www.npmjs.com/~thebigbot
+# 
+# 
+# It is strictly forbidden to copy any main code 
+# and pass it off as your own 
+# 
+# 
 */
+
+
 const clc = require("cli-color");
 const fs = require('fs');
 const { exec } = require('child_process');
