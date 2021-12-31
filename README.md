@@ -22,7 +22,9 @@ swing-template,
 discordia,
 go,
 discordext,
-rust-cli
+rust-cli,
+guess-number-go,
+guess-number-r
 
 
 ```bash

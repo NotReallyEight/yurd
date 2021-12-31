@@ -121,6 +121,7 @@ const go = require('./template/go')
 const webgl = require('./template/webgl')
 const discordext = require('./template/discordext')
 const rustcli = require('./template/rustcli')
+const guess = require('./template/guessthenumber')
 
 
 // Add template
@@ -320,6 +321,47 @@ program
       console.log(clc.yellow('[YURD] Creating Project...'))
       console.log(clc.yellow('[YURD] Creating Files...'))
       fs.appendFile('main.java', swingtemplate.mainjava, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      if (options.code) {
+        exec('code .', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+      }
+      console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
+    }
+
+    if (template == 'guess-number-r' || template == 'guessnumber-r') {
+      console.log(clc.yellow('[YURD] Install Template...'))
+      console.log(clc.yellow('[YURD] Creating Project...'))
+      console.log(clc.yellow('[YURD] Creating Files...'))
+      fs.appendFile('main.r', guess.mainr, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      if (options.code) {
+        exec('code .', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+      }
+      console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
+    }
+
+    
+    if (template == 'guess-number-go' || template == 'guessnumber-go') {
+      console.log(clc.yellow('[YURD] Install Template...'))
+      console.log(clc.yellow('[YURD] Creating Project...'))
+      console.log(clc.yellow('[YURD] Creating Files...'))
+      fs.appendFile('main.go', guess.maingo, function (err, data) {
         if (err) {
           console.log(clc.red('[YURD] Unexpected Error!'))
         }
@@ -933,6 +975,19 @@ program
 》File: main.rs
 》Language: Rust
 》Requires: Rust`)
+    }
+    if (template === 'guess-number-r') {
+      console.log(`
+》File: main.r
+》Language: R
+》Requires: R`)
+    }
+
+    if (template === 'guess-number-go') {
+      console.log(`
+》File: main.go
+》Language: Go
+》Requires: Go`)
     }
   })
 
