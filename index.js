@@ -829,7 +829,7 @@ cpp-cli`),
       clc.white(`
 
 Go Support:
-go-multiplication-table | go`),
+go-multiplication-table | go | guess-number-go`),
 
       clc.white(`
 
@@ -849,7 +849,12 @@ discordia`),
       clc.white(`
 
 Rust Support:
-rust-cli`))
+rust-cli`),
+
+clc.white(`
+
+R Support:
+guess-number-r`))
   })
 
 
