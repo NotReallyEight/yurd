@@ -32,6 +32,18 @@ client.on('messageCreate', message =>{
     */
 });
 
+/*
+----- Command JS File -----
+ 
+module.exports = {
+    name: 'ping',
+    description: "this is a ping command!",
+    execute(message, args){
+        message.channel.send('pong!');
+    }
+}
+*/
+
 client.login(process.env.TOKEN)`
 
 const indexts = `import Discord from 'discord.js';
