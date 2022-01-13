@@ -122,7 +122,7 @@ const webgl = require('./template/webgl')
 const discordext = require('./template/discordext')
 const rustcli = require('./template/rustcli')
 const guess = require('./template/guessthenumber')
-
+const electron = require('./template/electron')
 
 // Add template
 program
@@ -356,7 +356,6 @@ program
       console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
     }
 
-    
     if (template == 'guess-number-go' || template == 'guessnumber-go') {
       console.log(clc.yellow('[YURD] Install Template...'))
       console.log(clc.yellow('[YURD] Creating Project...'))
@@ -575,7 +574,6 @@ program
       console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
     }
 
-
     if (template == 'discord-bot-eris') {
       console.log(clc.yellow('[YURD] Install Template...'))
 
@@ -737,6 +735,55 @@ program
       console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
     }
 
+    if (template == 'electron') {
+      console.log(clc.yellow('[YURD] Install Template...'))
+      console.log(clc.yellow('[YURD] Creating Project...'))
+      exec('npm init -y', (err, stdout, stderr) => {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+          return;
+        }
+      });
+      console.log(clc.yellow('[YURD] Installing Package...'))
+      exec('npm install --save-dev electron', (err, stdout, stderr) => {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+          return;
+        }
+      });
+
+      console.log(clc.yellow('[YURD] Creating Files...'))
+      fs.appendFile('index.js', electron.indexjs, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      fs.appendFile('preload.js', electron.preloadjs, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      fs.appendFile('index.html', website.indexhtml, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      fs.appendFile('index.css', website.indexcss, function (err, data) {
+        if (err) {
+          console.log(clc.red('[YURD] Unexpected Error!'))
+        }
+      })
+      if (options.code) {
+        exec('code .', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+      }
+      console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
+      console.log(clc.yellow('[YURD] [WARN] ⚠ ATTENTION! Insert in the package.json inside the entry "scripts" replace the line "test" with the string: "start": "electron."'))
+    }
 
     if (template == 'simply-site') {
       console.log(clc.yellow('[YURD] Install Template...'))
@@ -851,7 +898,7 @@ discordia`),
 Rust Support:
 rust-cli`),
 
-clc.white(`
+      clc.white(`
 
 R Support:
 guess-number-r`))
