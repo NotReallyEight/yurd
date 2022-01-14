@@ -24,7 +24,8 @@ go,
 discordext,
 rust-cli,
 guess-number-go,
-guess-number-r
+guess-number-r, 
+electron 
 
 
 ```bash
