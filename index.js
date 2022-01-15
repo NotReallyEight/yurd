@@ -881,7 +881,7 @@ program
     console.log(
       clc.white(`
 JavaScript Support: 
-discord-bot | discord-bot-eris | simply-site | twitch-bot | website | djs-handler | webgl`),
+discord-bot | discord-bot-eris | simply-site | twitch-bot | website | djs-handler | webgl | electron`),
       clc.white(`
 
 TypeScript Support:
@@ -1058,6 +1058,15 @@ program
 》File: main.go
 》Language: Go
 》Requires: Go`)
+    }
+
+    if (template === 'electron') {
+      console.log(`
+》File: preload.js, index.js, package-lock.json, package.json
+》Directory: node_modules
+》Language: JS
+》Packages: electron
+》Requires: Node.js, Npm`)
     }
   })
 
