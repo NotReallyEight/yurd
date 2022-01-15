@@ -93,7 +93,6 @@
 # 
 */
 
-
 const clc = require("cli-color");
 const fs = require('fs');
 const { exec } = require('child_process');
@@ -822,6 +821,16 @@ program
           console.log(clc.red('[YURD] Unexpected Error!'))
         }
       })
+
+      if (options.code) {
+        exec('code .', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+      }
+
       console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
     }
 
@@ -843,6 +852,15 @@ program
           console.log(clc.red('[YURD] Unexpected Error!'))
         }
       })
+
+      if (options.code) {
+        exec('code .', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+      }
       console.log(clc.green('[YURD] Template Installed. Happy Coding!'))
     }
   })

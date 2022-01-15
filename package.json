@@ -23,7 +23,11 @@
     "type": "git",
     "url": "git+https://github.com/Thebigbot0000/yurd.git"
   },
-  "keywords": ["console", "templates", "global"],
+  "keywords": [
+    "console",
+    "templates",
+    "global"
+  ],
   "bugs": {
     "url": "https://github.com/Thebigbot0000/yurd/issues"
   },
