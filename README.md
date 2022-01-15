@@ -52,8 +52,10 @@ yurd info <template>
 ### General commands  
 
 ```bash
-yurd help
-yurd developer
-yurd version
-yurd all
+yurd -h : Show help menu | or yurd --help
+yurd -v : Show version | or yurd --version
+yurd create <template> : Create template
+yurd -all : Show all template | or yurd --list
+yurd info <template> : Show template info
+yurd --dev: Show all developer | or yurd --developer
 ```

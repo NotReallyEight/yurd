@@ -134,6 +134,7 @@ program
     if (!template) {
       console.log(clc.red(`404 Error. Not Fund! -- Yurd ${pkJson.version}`))
     }
+
     if (template == 'website') {
       console.log(clc.yellow('[YURD] Install Template...'))
       console.log(clc.yellow('[YURD] Creating Project...'))
@@ -871,6 +872,7 @@ program
   .command('version')
   .description('YURD Version')
   .action(() => {
+    console.log(clc.yellow("ATTENTION! the command \"yurd version\" will be removed in version 1.0.6 of yurd! Use \"yurd -v\" to use this command"))
     console.log(pkJson.version)
   })
 
@@ -878,7 +880,7 @@ program
   .command('all')
   .description('YURD all template')
   .action(() => {
-    console.log(
+    console.log(clc.yellow("ATTENTION! the command \"yurd all\" will be removed in version 1.0.6 of yurd! Use \"yurd -all\" to use this command"), 
       clc.white(`
 JavaScript Support: 
 discord-bot | discord-bot-eris | simply-site | twitch-bot | website | djs-handler | webgl | electron`),
@@ -1075,7 +1077,7 @@ program
   .command('developer')
   .description('YURD Developer')
   .action(() => {
-    console.log(clc.white(`
+    console.log(clc.yellow("ATTENTION! the command \"yurd developer\" will be removed in version 1.0.6 of yurd! Use \"yurd --developer\" to use this command"), clc.white(`
 Thebigbot - Main developer & CEO - https://github.com/Thebigbot0000
 ale_006 - Template developer - https://github.com/ale-006
 NotReallyEight - Template developer - https://github.com/NotReallyEight
@@ -1087,7 +1089,7 @@ program
   .command('dev')
   .description('YURD Developer')
   .action(() => {
-    console.log(clc.white(`
+    console.log(clc.yellow("ATTENTION! the command \"yurd dev\" will be removed in version 1.0.6 of yurd! Use \"yurd -dev\" to use this command"), clc.white(`
 Thebigbot - Main developer & CEO - https://github.com/Thebigbot0000
 ale_006 - Template developer - https://github.com/ale-006
 NotReallyEight - Template developer - https://github.com/NotReallyEight
@@ -1099,7 +1101,7 @@ program
   .command('help')
   .description('YURD Help')
   .action(() => {
-    console.log(clc.white(`
+    console.log(clc.yellow("ATTENTION! the command \"yurd help\" will be removed in version 1.0.6 of yurd! Use \"yurd -h\" to use this command"), clc.white(`
 yurd help : Show help menu
 yurd version : Show version
 yurd create <template> : Create template
@@ -1107,6 +1109,71 @@ yurd all : Show all template
 yurd info <template> : Show template info
 yurd developer : Show all developer`))
   })
+
+  program
+  .description('Template Generator')
+  .option('-v, --version', 'Show version')
+  .option('-h, --help', 'Show help menu')
+  .option('-dev, --developer', 'Show all developer')
+  .option('-all, --list', 'Show all template')
+  .action((options) => {
+    if (options.version) console.log(pkJson.version)
+    if (options.help) console.log(clc.white(`
+yurd -h : Show help menu | or yurd --help
+yurd -v : Show version | or yurd --version
+yurd create <template> : Create template
+yurd -all : Show all template | or yurd --list
+yurd info <template> : Show template info
+yurd --dev: Show all developer | or yurd --developer`))
+    if (options.developer) console.log(clc.white(`
+Thebigbot - Main developer & CEO - https://github.com/Thebigbot0000
+ale_006 - Template developer - https://github.com/ale-006
+NotReallyEight - Template developer - https://github.com/NotReallyEight
+UsboKirishima - Template developer - https://github.com/UsboKirishima
+Bl4ckdestinyXX - Template developer - https://github.com/BlackdestinyXX`))
+    if (options.list)     console.log(
+      clc.white(`
+JavaScript Support: 
+discord-bot | discord-bot-eris | simply-site | twitch-bot | website | djs-handler | webgl | electron`),
+      clc.white(`
+    
+TypeScript Support:
+discord-bot | discord-bot-eris | twitch-bot | djs-handler`),
+      clc.white(`
+    
+C++ Support:
+cpp-cli`),
+    
+      clc.white(`
+    
+Go Support:
+go-multiplication-table | go | guess-number-go`),
+    
+      clc.white(`
+    
+Python Support:
+discordpy | tkinter | discordext`),
+    
+      clc.white(`
+    
+Java Support:
+swing-template`),
+    
+      clc.white(`
+    
+Lua Support:
+discordia`),
+    
+      clc.white(`
+    
+Rust Support:
+rust-cli`),
+    
+      clc.white(`
+    
+R Support:
+guess-number-r`))
+});
 
 program.parse();
 
