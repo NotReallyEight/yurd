@@ -1124,7 +1124,7 @@ yurd -v : Show version | or yurd --version
 yurd create <template> : Create template
 yurd -all : Show all template | or yurd --list
 yurd info <template> : Show template info
-yurd --dev: Show all developer | or yurd --developer`))
+yurd -dev: Show all developer | or yurd --developer`))
     if (options.developer) console.log(clc.white(`
 Thebigbot - Main developer & CEO - https://github.com/Thebigbot0000
 ale_006 - Template developer - https://github.com/ale-006

@@ -57,5 +57,5 @@ yurd -v : Show version | or yurd --version
 yurd create <template> : Create template
 yurd -all : Show all template | or yurd --list
 yurd info <template> : Show template info
-yurd --dev: Show all developer | or yurd --developer
+yurd -dev: Show all developer | or yurd --developer
 ```
