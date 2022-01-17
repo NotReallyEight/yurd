@@ -100,6 +100,9 @@ const { Command } = require('commander');
 const program = new Command();
 const inquirer = require('inquirer');
 
+// Import public.json
+const filePublic = require('./public/public.json')
+
 // Import package.json
 const pkJson = require('./package.json')
 
@@ -121,7 +124,8 @@ const webgl = require('./template/webgl')
 const discordext = require('./template/discordext')
 const rustcli = require('./template/rustcli')
 const guess = require('./template/guessthenumber')
-const electron = require('./template/electron')
+const electron = require('./template/electron');
+const { fileURLToPath } = require("url");
 
 // Add template
 program
@@ -1322,6 +1326,21 @@ rust-cli`),
 R Support:
 guess-number-r`))
 });
+
+
+// Add public 
+
+program
+  .command('add [script]')
+  .description('Create a public template')
+  .action((template) => {
+    console.log(clc.yellow("ATTENTION! The public template service is in alpha!"))
+    fs.appendFile(filePublic.name.file, filePublic.name.content_git, function (err, data) {
+      if (err) {
+        console.log(clc.red('[YURD] Unexpected Error!'))
+      }
+    })
+  })
 
 program.parse();
 
