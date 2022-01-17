@@ -128,6 +128,9 @@ program
   .command('create [template]')
   .option('-vsc, --code', 'Open Visual Studio Code Before Process')
   .option('-ts, --typescript', 'Install js template with lang ts')
+  .option('-mongo, --dbmongo', 'Install Mongo Database')
+  .option('-sql, --dbsql', 'Install SQL Database')
+  .option('-fs, --pkgfs', 'Install fs')
   .description('Install Template')
   .action((template, options) => {
 
@@ -144,6 +147,16 @@ program
           return;
         }
       });
+
+      if (options.dbmongo) {
+        exec('npm i mongodb', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+      }
+      
       console.log(clc.yellow('[YURD] Installing Package...'))
       exec('npm install http fs express', (err, stdout, stderr) => {
         if (err) {
@@ -445,6 +458,14 @@ program
         return
       }
 
+      if (options.dbmongo) {
+        exec('npm i mongodb', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+      }
 
       console.log(clc.yellow('[YURD] Creating Project...'))
       exec('npm init -y', (err, stdout, stderr) => {
@@ -486,6 +507,14 @@ program
     if (template == 'djs-handler') {
       console.log(clc.yellow('[YURD] Install Template...'))
 
+      if (options.dbmongo) {
+        exec('npm i mongodb', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+      }
 
       if (options.typescript) {
         console.log(clc.yellow('[YURD] Creating Project...'))
@@ -586,6 +615,16 @@ program
             return;
           }
         });
+
+        if (options.dbmongo) {
+          exec('npm i mongodb', (err, stdout, stderr) => {
+            if (err) {
+              console.log(clc.red('[YURD] Unexpected Error!'))
+              return;
+            }
+          });
+        }
+
         console.log(clc.yellow('[YURD] Installing Package...'))
         exec('npm install eris dotenv', (err, stdout, stderr) => {
           if (err) {
@@ -657,6 +696,16 @@ program
 
     if (template == 'twitch-bot') {
       console.log(clc.yellow('[YURD] Install Template...'))
+
+
+      if (options.dbmongo) {
+        exec('npm i mongodb', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+      }
 
       if (options.typescript) {
         console.log(clc.yellow('[YURD] Creating Project...'))
@@ -736,6 +785,16 @@ program
     }
 
     if (template == 'electron') {
+
+      if (options.dbmongo) {
+        exec('npm i mongodb', (err, stdout, stderr) => {
+          if (err) {
+            console.log(clc.red('[YURD] Unexpected Error!'))
+            return;
+          }
+        });
+      }
+
       console.log(clc.yellow('[YURD] Install Template...'))
       console.log(clc.yellow('[YURD] Creating Project...'))
       exec('npm init -y', (err, stdout, stderr) => {
